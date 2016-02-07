@@ -17,8 +17,8 @@ namespace BabysitterKata
 
 		public int SetStartTime(int inputTime)
 		{
-//			if(inputTime >= 0 && inputTime <= 0400)
-//				inputTime += 2400;
+			if(inputTime >= 0 && inputTime <= 0400)
+				inputTime += 2400;
 
 			if(inputTime < 1700)
 				return -1;
@@ -41,8 +41,8 @@ namespace BabysitterKata
 
 		public int SetBedTime(int inputTime)
 		{
-//			if(inputTime >= 0 && inputTime <= 0400)
-//				inputTime += 2400;
+			if(inputTime >= 0 && inputTime <= 0400)
+				inputTime += 2400;
 
 			if(inputTime > endTime || inputTime < startTime)
 				return -1;
