@@ -66,6 +66,14 @@ namespace BabysitterKata
 			b.SetEndTime(2000);
 			Assert.AreEqual(-1, b.SetBedTime(2400));
 		}
+
+		[Test()]
+		public void whenBabysitterIsPassedAnyTimeAfterMidnightItReturnsTheTimePlusTwentyFourHundred ()
+		{
+			Assert.AreEqual(2700, b.SetStartTime(0300));
+			Assert.AreEqual(2700, b.SetEndTime(0300));
+			Assert.AreEqual(2700, b.SetBedTime(0300));
+		}
 	}
 }
 
