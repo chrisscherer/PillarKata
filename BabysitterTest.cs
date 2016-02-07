@@ -96,37 +96,37 @@ namespace BabysitterKata
 		[Test()]
 		public void whenBabysitterIsScheduledForTwoHoursOfBedTimeToMidnightItReturnsSixteen ()
 		{
-			Assert.AreEqual(16, b.CalculatePay(2200, 2400, 2200));
+			Assert.AreEqual(16, b.CalculatePay(2200, 2200, 2400));
 		}
 
 		[Test()]
 		public void whenBabysitterIsScheduledForTwoHoursOfMidnightToEndOfJobPayItReturnsThirtyTwo ()
 		{
-			Assert.AreEqual(32, b.CalculatePay(0100, 0300, 0200));
+			Assert.AreEqual(32, b.CalculatePay(0100, 0200, 0300));
 		}
 
 		[Test()]
 		public void whenBabysitterIsScheduledForPartialHoursTheyAreOnlyPaidForFullHours ()
 		{
-			Assert.AreEqual(20, b.CalculatePay(1700, 1930, 1815));
+			Assert.AreEqual(20, b.CalculatePay(1700, 1815, 1930));
 		}
 
 		[Test()]
 		public void whenBabysitterIsScheduledForTwoHoursOfEachPayTheyArePaidSeventyTwo ()
 		{
-			Assert.AreEqual(72, b.CalculatePay(2000, 0200, 2200));
+			Assert.AreEqual(72, b.CalculatePay(2000, 2200, 0200));
 		}
 
 		[Test()]
 		public void whenBabysitterIsScheduledToBeDoneBeforeStartReturnZero ()
 		{
-			Assert.AreEqual(0, b.CalculatePay(2000, 1800, 2100));
+			Assert.AreEqual(0, b.CalculatePay(2000, 2100, 1800));
 		}
 
 		[Test()]
 		public void whenBabysitterIsScheduledToStartBeforeMidnightWithAnAfterMidnightBedtimePayIsCorrectlyCalculated ()
 		{
-			Assert.AreEqual(80, b.CalculatePay(2000, 0200, 0100));
+			Assert.AreEqual(80, b.CalculatePay(2000, 0100, 0200));
 		}
 	}
 }
