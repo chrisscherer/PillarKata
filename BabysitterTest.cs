@@ -74,6 +74,15 @@ namespace BabysitterKata
 			Assert.AreEqual(2700, b.SetEndTime(0300));
 			Assert.AreEqual(2700, b.SetBedTime(0300));
 		}
+
+		[Test()]
+		public void whenBabysitterIsAskedToCalculatePayItReturnsAnIntegerValueEqualToTheExpectedPay ()
+		{
+			b.SetStartTime(1700);
+			b.SetBedTime(1800);
+			b.SetEndTime(1800);
+			Assert.AreEqual (12, b.CalculatePay());
+		}
 	}
 }
 
