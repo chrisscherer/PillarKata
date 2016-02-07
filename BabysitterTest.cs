@@ -30,7 +30,7 @@ namespace BabysitterKata
 		[Test()]
 		public void whenBabysitterIsPassedAStartTimeItValidatesThatItIsAfterFivePM ()
 		{
-			Assert.AreEqual(1800, b.SetStartTime(1800));
+			Assert.AreEqual("1800", b.SetStartTime("1800"));
 		}
 	}
 }
