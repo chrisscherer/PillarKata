@@ -44,6 +44,12 @@ namespace BabysitterKata
 		{
 			Assert.AreEqual(0300, b.SetEndTime(0300));
 		}
+
+		[Test()]
+		public void whenBabysitterIsPassedALateEndTimeItReturnsZero ()
+		{
+			Assert.AreEqual (0, b.SetEndTime(0500));
+		}
 	}
 }
 
