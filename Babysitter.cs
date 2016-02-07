@@ -58,8 +58,12 @@ namespace BabysitterKata
 		}
 
 		//Method used to calculate pay, currently has to be used after setting other times...
-		public int CalculatePay()
+		public int CalculatePay(int inputStartTime, int inputEndTime, int inputBedTime)
 		{
+			this.SetStartTime(inputStartTime);
+			this.SetEndTime(inputEndTime);
+			this.SetBedTime(inputBedTime);
+
 			if(startTime == endTime)
 				return 0;
 
