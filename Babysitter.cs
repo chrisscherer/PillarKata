@@ -57,7 +57,10 @@ namespace BabysitterKata
 			if(startTime == endTime)
 				return 0;
 
-			return (bedTime - startTime) / 100 * 12;
+			int startToBedTimeHours = (bedTime - startTime) / 100;
+			int bedTimeToMidnightHours = endTime < 2400 ? (endTime - bedTime) / 100 : (2400 - bedTime) / 100;
+
+			return startToBedTimeHours * 12 + bedTimeToMidnightHours * 8;
 		}
 	}
 }
