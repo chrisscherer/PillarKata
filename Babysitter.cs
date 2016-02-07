@@ -52,6 +52,8 @@ namespace BabysitterKata
 
 		public int CalculatePay()
 		{
+			if(startTime == endTime)
+				return 0;
 			return 12;
 		}
 	}
