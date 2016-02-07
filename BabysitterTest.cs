@@ -152,6 +152,16 @@ namespace BabysitterKata
 			
 			Assert.AreEqual(0, b.CalculatePay());
 		}
+
+		[Test()]
+		public void whenBabysitterIsScheduledToStartBeforeMidnightWithAnAfterMidnightBedtimePayIsCorrectlyCalculated ()
+		{
+			b.SetStartTime(2000);
+			b.SetEndTime(0200);
+			b.SetBedTime(0100);
+			
+			Assert.AreEqual(80, b.CalculatePay());
+		}
 	}
 }
 
