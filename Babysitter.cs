@@ -41,7 +41,7 @@ namespace BabysitterKata
 			if(inputTime > endTime || inputTime < startTime)
 				return -1;
 
-			return 2000;
+			return inputTime;
 		}
 	}
 }
