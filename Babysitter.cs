@@ -12,6 +12,12 @@ namespace BabysitterKata
 {
 	public class Babysitter
 	{
+		public int startTime;
+
+		public int SetStartTime(int inputTime)
+		{
+			return 1800;
+		}
 	}
 }
 
