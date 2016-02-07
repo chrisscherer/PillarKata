@@ -42,7 +42,7 @@ namespace BabysitterKata
 		[Test()]
 		public void whenBabysitterIsPassedAValidEndTimeItReturnsTheGivenTime()
 		{
-			Assert.AreEqual(0300, b.SetEndTime(0300));
+			Assert.AreEqual(2700, b.SetEndTime(0300));
 		}
 
 		[Test()]
@@ -54,13 +54,15 @@ namespace BabysitterKata
 		[Test()]
 		public void whenBabysitterIsPassedAValidBedtimeItReturnsTheGivenTime ()
 		{
+			b.SetStartTime(1800);
+			b.SetEndTime(2100);
 			Assert.AreEqual(2000, b.SetBedTime(2000));
 		}
 
 		[Test()]
 		public void whenBabysitterIsPassedABedtimeOutsideStartTimeAndEndTimeItReturnsNegativeOne ()
 		{
-			b.SetStartTime(1600);
+			b.SetStartTime(1800);
 			b.SetEndTime(2000);
 			Assert.AreEqual(-1, b.SetBedTime(2400));
 		}
