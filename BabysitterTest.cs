@@ -15,9 +15,22 @@ namespace BabysitterKata
 	[TestFixture()]
 	public class BabysitterTest
 	{
-		[Test()]
-		public void TestCase ()
+		Babysitter b;
+
+		[SetUp] public void Init()
 		{
+			b = new Babysitter();
+		}
+
+		[TearDown] public void Dispose()
+		{
+			b = null;
+		}
+
+		[Test()]
+		public void whenBabysitterIsPassedAStartTimeItValidatesThatItIsAfterFivePM ()
+		{
+			b.SetStartTime(1800);
 		}
 	}
 }
