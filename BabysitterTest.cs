@@ -52,9 +52,17 @@ namespace BabysitterKata
 		}
 
 		[Test()]
-		public void whenBabysitterIsPassedAValidBedtimeItReturnsTheGivenTime()
+		public void whenBabysitterIsPassedAValidBedtimeItReturnsTheGivenTime ()
 		{
 			Assert.AreEqual(2000, b.SetBedTime(2000));
+		}
+
+		[Test()]
+		public void whenBabysitterIsPassedABedtimeOutsideStartTimeAndEndTimeItReturnsNegativeOne ()
+		{
+			b.SetStartTime(1600);
+			b.SetEndTime(2000);
+			Assert.AreEqual(-1, b.SetBedTime(2400));
 		}
 	}
 }
