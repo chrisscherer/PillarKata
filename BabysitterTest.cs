@@ -30,13 +30,13 @@ namespace BabysitterKata
 		[Test()]
 		public void whenBabysitterIsPassedAValidStartTimeItReturnsTheGivenTime ()
 		{
-			Assert.AreEqual("1800", b.SetStartTime("1800"));
+			Assert.AreEqual(1800, b.SetStartTime(1800));
 		}
 
 		[Test()]
-		public void whenBabysitterIsPassedAnEarlyStartTimeItReturnsInvalid ()
+		public void whenBabysitterIsPassedAnEarlyStartTimeItReturnsZero ()
 		{
-			Assert.AreEqual ("Invalid", b.SetStartTime("1400"));
+			Assert.AreEqual (0, b.SetStartTime(1400));
 		}
 	}
 }
