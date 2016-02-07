@@ -49,6 +49,11 @@ namespace BabysitterKata
 
 			return inputTime;
 		}
+
+		public int CalculatePay()
+		{
+			return 12;
+		}
 	}
 }
 
