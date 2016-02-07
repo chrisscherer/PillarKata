@@ -28,6 +28,11 @@ namespace BabysitterKata
 
 			return 0300;
 		}
+
+		public int SetBedTime(int inputTime)
+		{
+			return 2000;
+		}
 	}
 }
 
