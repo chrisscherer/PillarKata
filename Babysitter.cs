@@ -12,10 +12,12 @@ namespace BabysitterKata
 {
 	public class Babysitter
 	{
+		//Time properties to be used for comparisons and calculations
 		private int startTime;
 		private int endTime;
 		private int bedTime;
 
+		//Method to set babysitter startTime, also checks to make sure the time is valid
 		public int SetStartTime(int inputTime)
 		{
 			if(inputTime >= 0 && inputTime <= 0400)
@@ -28,6 +30,7 @@ namespace BabysitterKata
 			return inputTime;
 		}
 
+		//Method to set babysitter endTime, also checks to make sure the time is valid
 		public int SetEndTime(int inputTime)
 		{
 			if(inputTime >= 0 && inputTime <= 0400)
@@ -40,6 +43,8 @@ namespace BabysitterKata
 			return inputTime;
 		}
 
+		//Method to set babysitter bedTime, also checks to make sure the time is valid.
+		//Currently has to be set after both start and end time
 		public int SetBedTime(int inputTime)
 		{
 			if(inputTime >= 0 && inputTime <= 0400)
@@ -52,12 +57,13 @@ namespace BabysitterKata
 			return inputTime;
 		}
 
+		//Method used to calculate pay, currently has to be used after setting other times...
 		public int CalculatePay()
 		{
 			if(startTime == endTime)
 				return 0;
 
-			int startToBedTimeHours = startTime < 2400 ? (bedTime - startTime) / 100 : 0;
+			int startToBedTimeHours = (startTime < 2400 && bedTime < 2400) ? (bedTime - startTime) / 100 : (startTime < 2400) ? (2400 - startTime) / 100 : 0;
 			int bedTimeToMidnightHours = endTime < 2400 ? (endTime - bedTime) / 100 : (2400 - bedTime) / 100;
 			int midnightToEndOfJobHours = startTime > 2400 ? (endTime - startTime) / 100 : (endTime - 2400) / 100;
 
