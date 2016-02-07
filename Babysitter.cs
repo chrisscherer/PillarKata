@@ -14,6 +14,7 @@ namespace BabysitterKata
 	{
 		private int startTime;
 		private int endTime;
+		private int bedTime;
 
 		public int SetStartTime(int inputTime)
 		{
@@ -47,6 +48,7 @@ namespace BabysitterKata
 			if(inputTime > endTime || inputTime < startTime)
 				return -1;
 
+			bedTime = inputTime;
 			return inputTime;
 		}
 
@@ -54,7 +56,8 @@ namespace BabysitterKata
 		{
 			if(startTime == endTime)
 				return 0;
-			return 12;
+
+			return (bedTime - startTime) / 100 * 12;
 		}
 	}
 }
