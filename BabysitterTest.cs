@@ -36,7 +36,7 @@ namespace BabysitterKata
 		[Test()]
 		public void whenBabysitterIsPassedAnEarlyStartTimeItReturnsZero ()
 		{
-			Assert.AreEqual (0, b.SetStartTime(1400));
+			Assert.AreEqual (-1, b.SetStartTime(1400));
 		}
 
 		[Test()]
@@ -48,8 +48,9 @@ namespace BabysitterKata
 		[Test()]
 		public void whenBabysitterIsPassedALateEndTimeItReturnsZero ()
 		{
-			Assert.AreEqual (0, b.SetEndTime(0500));
+			Assert.AreEqual (-1, b.SetEndTime(0500));
 		}
+
 	}
 }
 
